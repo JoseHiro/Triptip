@@ -29,11 +29,20 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path(@post), notice: 'Successfully post updated !'
+      redirect_to post_path(@post), notice: 'Successfully updated !'
     else
       redirect_to edit_post(@post), alert: 'Oops! Failed to update!'
     end
 
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      redirect_to root_path, notice: "Successfully deleted"
+    else
+      redirect_to post_path, alert: "Failed to delete"
+    end
   end
 
   private

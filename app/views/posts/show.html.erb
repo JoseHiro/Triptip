@@ -12,7 +12,7 @@
       <i class="fa-regular fa-comment"></i>
       <i class="fa-solid fa-heart"></i>
       <%= link_to "Edit post",  edit_post_path(@post), class:"btn btn-light"%>
-
+      <%= button_to "Delete post", post_path(@post), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-light"  %>
     </div>
   </div>
   <div style="width: 600px;  height 700px; background-color: grey" >
