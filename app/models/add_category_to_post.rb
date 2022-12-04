@@ -1,0 +1,2 @@
+class AddCategoryToPost < ApplicationRecord
+end

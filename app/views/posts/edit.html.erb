@@ -1,0 +1,8 @@
+<h2>Edit post</h2>
+<%= simple_form_for(@post) do |f| %>
+  <%= f.input :title, autofocus: true %>
+  <%= f.input :category, autofocus: true %>
+  <%= f.input :content, autofocus: true %>
+  <%= f.input :location, autofocus: true %>
+  <%= f.submit%>
+<% end %>

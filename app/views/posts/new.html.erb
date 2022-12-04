@@ -1,0 +1,10 @@
+<h1>New page</h1>
+
+<%= simple_form_for (@post) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :location %>
+  <%= f.input :category %>
+  <%= f.input :content %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit %>
+<% end %>

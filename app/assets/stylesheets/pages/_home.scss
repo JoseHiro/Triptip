@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+#landing-background {
+  background-image: url("landing-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.corner {
+  border-radius: 7px;
+}
+
+.circle {
+  border-radius: 50%;
+}

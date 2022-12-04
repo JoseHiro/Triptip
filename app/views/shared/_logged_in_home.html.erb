@@ -1,0 +1,131 @@
+<div style="height:1000px">
+
+ <div class="d-flex justify-content-center" style="margin-top: 100px;">
+  <div>
+    <%# div white 1 %>
+    <div class="" style="box-shadow: 0 0 15px rgba(0,0,0,0.2); height:400px; width: 400px; background-color: white;">
+      <h4><%= "Hello #{current_user.first_name}" %></h4>
+      <%= cl_image_tag current_user.avatar.key, height: 300, width: 400, crop: :fill %>
+      <img src="https://www.freeiconspng.com/thumbs/account-icon/account-icon-33.png" style="height:100px; width:100px" alt="">
+      <%= link_to "Edit account", edit_user_registration_path(current_user), class:"btn btn-light"  %>
+      <div class="d-flex mt-3">
+        <h3>Visitied Countries</h3>
+        <h3>3</h3>
+      </div>
+      <div class="d-flex mt-3">
+        <h3>You met from this app</h3>
+        <h3>18</h3>
+      </div>
+      <div class="d-flex mt-3">
+        <h3>Friends from differnt countries</h3>
+        <h3>8</h3>
+      </div>
+
+    </div>
+
+     <%# div white 2 %>
+    <div class=" mt-4" style="box-shadow: 0 0 15px rgba(0,0,0,0.2); height: 400px; width: 400px; background-color: white;">
+      <h4>Todo list</h4>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="d-flex">
+      <%# div white 3 %>
+      <div class="ms-4 me-2" style="box-shadow: 0 0 15px rgba(0,0,0,0.2); height: 100px; width: 330px; background-color: #005051;">
+        <h3>Post my Triptip</h3>
+        <%= link_to "Post", new_post_path, class:"btn btn-light" %>
+      </div>
+
+      <%# div white 4 %>
+      <div class="" style="box-shadow: 0 0 15px rgba(0,0,0,0.2); height: 100px; width: 360px; background-color: white; left:">
+        <h4>Current destination</h4>
+        <h2>Mexico city/Mexico</h2>
+      </div>
+    </div>
+
+    <%# div green 5 %>
+    <div class="mt-4 ms-4 me-4 " style="box-shadow: 0 0 15px rgba(0,0,0,0.2); height: 700px; width: 700px; background-color: #005051;">
+      <h3>Active Traveler</h3>
+      <div class="d-flex justify-content-around " style="">
+        <div style="background-color: white; height: 80px; width:300px" class="mt-3 corner">
+          <div class="d-flex">
+            <img class="circle" src="https://www.freeiconspng.com/thumbs/account-icon/account-icon-33.png" style="height:40px; width:40px" alt="">
+            <div>
+              <h5>User name</h5>
+              <h5>Going to see luchalibre</h5>
+            </div>
+          </div>
+          <button class="btn btn-btn-light">Join</button>
+        </div>
+
+        <div style="background-color: white; height: 80px; width:300px" class="mt-3 corner">
+          <div class="d-flex">
+            <img class="circle" src="https://www.freeiconspng.com/thumbs/account-icon/account-icon-33.png" style="height:40px; width:40px" alt="">
+            <div>
+              <h5>User name</h5>
+              <h5>Going to see luchalibre</h5>
+            </div>
+          </div>
+          <button class="btn btn-btn-light">Join</button>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-around" style="">
+        <div style="background-color: white; height: 80px; width:300px" class="mt-3 corner">
+          <div class="d-flex">
+            <img class="circle" src="https://www.freeiconspng.com/thumbs/account-icon/account-icon-33.png" style="height:40px; width:40px" alt="">
+            <div>
+              <h5>User name</h5>
+              <h5>Going to see luchalibre</h5>
+            </div>
+          </div>
+          <button class="btn btn-btn-light">Join</button>
+        </div>
+
+        <div style="background-color: white; height: 80px; width:300px" class="mt-3 corner">
+          <div class="d-flex">
+            <img class="circle" src="https://www.freeiconspng.com/thumbs/account-icon/account-icon-33.png" style="height:40px; width:40px" alt="">
+            <div>
+              <h5>User name</h5>
+              <h5>Going to see luchalibre</h5>
+            </div>
+          </div>
+          <button class="btn btn-btn-light">Join</button>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-around" style="">
+        <div style="background-color: white; height: 80px; width:300px" class="mt-3 corner">
+          <div class="d-flex">
+            <img class="circle" src="https://www.freeiconspng.com/thumbs/account-icon/account-icon-33.png" style="height:50px; width:50px" alt="">
+            <div>
+              <h5>User name</h5>
+              <h5>Going to see luchalibre</h5>
+            </div>
+          </div>
+          <button class="btn btn-btn-light">Join</button>
+        </div>
+
+        <div style="background-color: white; height: 80px; width:300px" class="mt-3 corner">
+          <div class="d-flex">
+            <img class="circle" src="https://www.freeiconspng.com/thumbs/account-icon/account-icon-33.png" style="height:50px; width:50px" alt="">
+            <div>
+              <h5>User name</h5>
+              <h5>Going to see luchalibre</h5>
+            </div>
+          </div>
+          <button class="btn btn-btn-light">Join</button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+ </div>
+
+
+
+
+
+</div>

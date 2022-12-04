@@ -1,0 +1,20 @@
+
+<div style="background-color: grey; width:100%; height:500px;">
+</div>
+
+<% @posts.each do |post| %>
+  <div class="card" style="width: 300px;">
+    <img style="width:280px; height: 200px; background-color:yellow;" src="https://elcomercio.pe/resizer/VBT_5K1XgES0ec_-SjauADEHd_I=/1200x800/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/YZE2DDHNKNDXJNSFLFTAKPUUGU.jpg" alt="">
+      <div class="d-flex">
+        <img class="circle" src="https://www.freeiconspng.com/thumbs/account-icon/account-icon-33.png" style="height:30px; width:30px" alt="">
+        <%= User.find(post.user_id).first_name %>
+      </div>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text"><%= post.content %></p>
+      <%= link_to "Show", post_path(post), class:"btn btn-light" %>
+      <i class="fa-regular fa-comment"></i>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+  </div>
+<% end %>
