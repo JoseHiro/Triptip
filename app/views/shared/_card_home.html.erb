@@ -1,0 +1,25 @@
+
+<h3>Suggestions in your destination</h3>
+<div class="mt-4 col-lg-3 d-flex row flex-row flex-nowrap overflow-auto" style="margin: 0 auto; width: 1100px">
+  <% @posts.each do |post| %>
+    <div class="card me-5 corner shadow" style="width: 250px;">
+      <% if post.photo.attached? %>
+          <%= cl_image_tag post.photo.key, height: 200, width: 250, crop: :fill %>
+        <% else %>
+          <img style="width:100%;" src="https://elcomercio.pe/resizer/VBT_5K1XgES0ec_-SjauADEHd_I=/1200x800/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/YZE2DDHNKNDXJNSFLFTAKPUUGU.jpg" alt="">
+        <% end %>
+        <div class="d-flex">
+          <img class="circle" src="https://www.freeiconspng.com/thumbs/account-icon/account-icon-33.png" style="height:30px; width:30px" alt="">
+          <%= User.find(post.user_id).first_name %>
+          <h5 class="ms-2 card-title">Card title</h5>
+        </div>
+      <div class="card-body">
+
+        <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><%= post.content %></p>
+        <%= link_to "Show", post_path(post), class:"btn btn-light" %>
+        <i class="fa-regular fa-comment"></i>
+        <i class="fa-solid fa-heart"></i>
+      </div>
+    </div>
+  <% end %>
+</div>

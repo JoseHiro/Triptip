@@ -1,20 +1,31 @@
-
-<div style="background-color: grey; width:100%; height:500px;">
-</div>
-
+<%# index %>
+<div class="mt-4 col-lg-3 d-flex row flex-row flex-nowrap overflow-auto" style="margin: 0 auto; width: 100%">
 <% @posts.each do |post| %>
-  <div class="card" style="width: 300px;">
-    <img style="width:280px; height: 200px; background-color:yellow;" src="https://elcomercio.pe/resizer/VBT_5K1XgES0ec_-SjauADEHd_I=/1200x800/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/YZE2DDHNKNDXJNSFLFTAKPUUGU.jpg" alt="">
+  <div class="card me-5" style="width: 400px;">
+     <% if post.photo.attached? %>
+        <%= cl_image_tag post.photo.key, width: 400, crop: :fill %>
+      <% else %>
+        <img style="width:380px;" src="https://elcomercio.pe/resizer/VBT_5K1XgES0ec_-SjauADEHd_I=/1200x800/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/YZE2DDHNKNDXJNSFLFTAKPUUGU.jpg" alt="">
+      <% end %>
       <div class="d-flex">
         <img class="circle" src="https://www.freeiconspng.com/thumbs/account-icon/account-icon-33.png" style="height:30px; width:30px" alt="">
         <%= User.find(post.user_id).first_name %>
+        <h5 class="card-title">Card title</h5>
       </div>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
       <p class="card-text"><%= post.content %></p>
       <%= link_to "Show", post_path(post), class:"btn btn-light" %>
       <i class="fa-regular fa-comment"></i>
-      <i class="fa-solid fa-heart"></i>
+
+      <%= link_to new_post_like_path(post) do%>
+        <i class="fa-solid fa-heart"></i>
+      <% end %>
+
+      <%= simple_form_for([post, @comment]) do |f|%>
+        <%= f.input :text %>
+        <%= f.button :submit, "Comment"%>
+      <% end %>
     </div>
   </div>
 <% end %>
+</div>

@@ -11,6 +11,17 @@
       </h2>
     <% end %>
 
+    <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+                          params[:query],
+                          class: "form-control",
+                          placeholder: "Search your information",
+                          style:"width: 400px"%>
+
+      <%= submit_tag "Search", class: "btn btn-light" %>
+    <% end %>
+
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

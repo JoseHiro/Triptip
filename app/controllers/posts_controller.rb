@@ -16,10 +16,24 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @markers = [
+      {
+        lat: @post.latitude,
+        lng: @post.longitude,
+        info_window: render_to_string(partial: "popup", locals: {post: @post})
+      }]
   end
 
   def index
+    @comment = Comment.new
     @posts = Post.all
+    @markers = @posts.geocoded.map do |post|
+      {
+        lat: post.latitude,
+        lng: post.longitude,
+        info_window: render_to_string(partial: "popup", locals: {post: post})
+      }
+    end
   end
 
   def edit
@@ -48,7 +62,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :location, :category, :title, :photo)
+    params.require(:post).permit(:content, :address, :category, :title, :photo)
   end
 
 end
