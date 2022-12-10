@@ -10,6 +10,6 @@ User.create(first_name: "Josey", last_name: "Sekine", email: "josey@josey", pass
 5.times do |t|
   user = User.create(first_name: Faker::Name.first_name , last_name: Faker::Name.first_name , email: Faker::Internet.email, password: "111111" )
   3.times do |t|
-    Post.create(title: Faker::Restaurant.name, content:Faker::Food.description, category:Faker::Restaurant.type, location:Faker::WorldCup.team, user_id:user.id)
+    Post.create(title: Faker::Restaurant.name, content:Faker::Food.description, category:Faker::Restaurant.type, address:Faker::Address.country, user_id:user.id)
   end
 end

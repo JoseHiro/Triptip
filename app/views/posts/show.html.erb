@@ -1,8 +1,11 @@
 <div class="d-flex">
  <div class="card" style="width: 500px;">
-    <img style="width:450px; height: 280px;" src="https://elcomercio.pe/resizer/VBT_5K1XgES0ec_-SjauADEHd_I=/1200x800/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/YZE2DDHNKNDXJNSFLFTAKPUUGU.jpg" alt="">
+      <% if @post.photo.attached? %>
+        <%= cl_image_tag @post.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <img style="width:450px; height: 280px;" src="https://elcomercio.pe/resizer/VBT_5K1XgES0ec_-SjauADEHd_I=/1200x800/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/YZE2DDHNKNDXJNSFLFTAKPUUGU.jpg" alt="">
+      <% end %>
       <div class="d-flex">
-       <%= cl_image_tag @post.photo.key, height: 300, width: 400, crop: :fill %>
         <img class="circle" src="https://www.freeiconspng.com/thumbs/account-icon/account-icon-33.png" style="height:30px; width:30px" alt="">
         <%= User.find(@post.user_id).first_name %>
       </div>
@@ -15,8 +18,11 @@
       <%= button_to "Delete post", post_path(@post), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-light"  %>
     </div>
   </div>
-  <div style="width: 600px;  height 700px; background-color: grey" >
-    <h1>map</h1>
+  <%# map %>
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
 
