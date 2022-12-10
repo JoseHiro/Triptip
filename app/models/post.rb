@@ -4,6 +4,14 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_one_attached :photo
+  has_many :likes, dependent: :destroy
 
   has_many :comments, dependent: :destroy
+
+
+  private
+
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
 end

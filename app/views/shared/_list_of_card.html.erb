@@ -17,8 +17,19 @@
       <%= link_to "Show", post_path(post), class:"btn btn-light" %>
       <i class="fa-regular fa-comment"></i>
 
-      <%= link_to new_post_like_path(post) do%>
-        <i class="fa-solid fa-heart"></i>
+      <%# like button %>
+
+
+      <% if post.user_id == current_user.id %>
+        <%= button_to post_likes_path(post), method: :delete, class:"btn btn-outline-primary" do %>
+          <p>unlike</p>
+          <i class="fa-solid fa-heart"></i>
+        <% end %>
+      <% else %>
+        <%= button_to post_likes_path(post), method: :post, class:"btn btn-primary" do %>
+        <p>like</p>
+          <i class="fa-regular fa-heart"></i>
+        <% end %>
       <% end %>
 
       <%= simple_form_for([post, @comment]) do |f|%>
