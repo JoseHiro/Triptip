@@ -1,0 +1,16 @@
+<div class="container marketing">
+  <div class="row d-flex justify-content-center">
+    <div class="col-10 mt-5 mb-5">
+      <h1>Edit</h1>
+
+      <%= simple_form_for([current_user, @about]) do |f| %>
+        <%= f.input :profile %>
+        <%# <%= f.input :number_of_countries, :collection => %w[Mike Nick Jason Tim]  %>
+        <%= f.input :number_of_countries, input_html:{min: 0}  %>
+        <%= f.input :number_of_met_people, input_html:{min: 0} %>
+        <%= f.input :number_of_friends, input_html:{min: 0} %>
+        <%= f.button :submit, class:"btn btn-light"%>
+      <% end %>
+    </div>
+  </div>
+</div>

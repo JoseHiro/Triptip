@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_one_attached :avatar
   has_one :location
+  has_many :chatrooms
+  has_many :messages
+  has_many :chat_room_users
+  has_one :about, dependent: :destroy
 
   private
 

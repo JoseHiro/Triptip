@@ -1,0 +1,15 @@
+current directory: /Users/joseysekine/Desktop/Current_Projects/Triptip/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/Users/joseysekine/.rvm/rubies/ruby-3.1.2/bin/ruby -I /Users/joseysekine/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0 -r ./siteconf20221223-32422-4mxnjo.rb extconf.rb
+creating Makefile
+
+current directory: /Users/joseysekine/Desktop/Current_Projects/Triptip/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= clean
+
+current directory: /Users/joseysekine/Desktop/Current_Projects/Triptip/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\=
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/joseysekine/Desktop/Current_Projects/Triptip/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20221223-32422-rhgtix

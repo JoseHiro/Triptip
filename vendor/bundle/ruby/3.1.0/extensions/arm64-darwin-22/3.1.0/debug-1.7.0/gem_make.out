@@ -1,0 +1,16 @@
+current directory: /Users/joseysekine/Desktop/Current_Projects/Triptip/vendor/bundle/ruby/3.1.0/gems/debug-1.7.0/ext/debug
+/Users/joseysekine/.rvm/rubies/ruby-3.1.2/bin/ruby -I /Users/joseysekine/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0 -r ./siteconf20221223-32422-jfdgif.rb extconf.rb
+creating Makefile
+
+current directory: /Users/joseysekine/Desktop/Current_Projects/Triptip/vendor/bundle/ruby/3.1.0/gems/debug-1.7.0/ext/debug
+make DESTDIR\= clean
+
+current directory: /Users/joseysekine/Desktop/Current_Projects/Triptip/vendor/bundle/ruby/3.1.0/gems/debug-1.7.0/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/joseysekine/Desktop/Current_Projects/Triptip/vendor/bundle/ruby/3.1.0/gems/debug-1.7.0/ext/debug
+make DESTDIR\= install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 debug.bundle ./.gem.20221223-32422-33svvw/debug

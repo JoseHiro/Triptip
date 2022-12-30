@@ -1,0 +1,6 @@
+<h3>User list temporary</h3>
+<% @user.each do |user| %>
+  <%= user.first_name %>
+  <%= button_to "Chat", chatrooms_path(user) , method: :post, class:"btn btn-light" %>
+  <hr>
+<% end %>

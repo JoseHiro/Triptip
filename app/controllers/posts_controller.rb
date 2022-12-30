@@ -22,6 +22,10 @@ class PostsController < ApplicationController
         lng: @post.longitude,
         info_window: render_to_string(partial: "popup", locals: {post: @post})
       }]
+
+      if current_user.location.present?
+        @current = [{address: current_user.location}]
+      end
   end
 
   def index
