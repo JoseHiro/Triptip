@@ -4,16 +4,21 @@ import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    markers: Array,
+    address: Array
   }
 
   connect() {
-    mapboxgl.accessToken = this.apiKeyValue
+    // console.log(this.addressValue[0].address)
+    // const end = [this.markersValue[0].lat, this.markersValue[0].lng];
+    // let start = [this.addressValue[0].address.latitude, this.addressValue[0].address.ongitude];
 
+    mapboxgl.accessToken = this.apiKeyValue
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/mapbox/streets-v10",
     })
+    console.log(this)
 
     this.#addMarkersToMap();
     this.#fitMapToMarkers();
@@ -24,7 +29,7 @@ export default class extends Controller {
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-    this.map.fitBounds(bounds, { padding: 50, maxZoom: 15, duration: 10 })
+    this.map.fitBounds(bounds, { padding: 50, maxZoom: 15, duration: 6000 })
   }
 
   #addMarkersToMap() {
@@ -36,5 +41,4 @@ export default class extends Controller {
         .addTo(this.map)
     });
   }
-
 }

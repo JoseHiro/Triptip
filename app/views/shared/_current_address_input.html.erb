@@ -7,14 +7,14 @@
     </div>
   <% end %>
 <% else %>
-  <div class="d-flex">
-  <h4><i class="fa-solid fa-location-pin"></i></h4>
+  <div class="d-flex justify-content-center">
+    <h4><i class="fa-solid fa-location-dot"></i></h4>
     <%= current_user.location.address %>
   </div>
     <%= simple_form_for (current_user.location), data: {turbo: false} do |f|%>
-      <div class="d-flex">
+      <div class="d-flex justify-content-center">
         <%= f.input :address, label: false, input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
-        <%= f.button :submit, "Change", class:"btn btn-dark", style:"margin-top:31px; margin-bottom:20px;" %>
+        <%= f.button :submit, "Change", class:"btn btn-dark", style:"margin-bottom:20px;" %>
       </div>
     <% end %>
 <% end %>

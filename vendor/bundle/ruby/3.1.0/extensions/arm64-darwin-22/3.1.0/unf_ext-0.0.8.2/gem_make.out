@@ -1,0 +1,16 @@
+current directory: /Users/joseysekine/Desktop/Current_Projects/Triptip/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+/Users/joseysekine/.rvm/rubies/ruby-3.1.2/bin/ruby -I /Users/joseysekine/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0 -r ./siteconf20221223-32422-vqqfr2.rb extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /Users/joseysekine/Desktop/Current_Projects/Triptip/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= clean
+
+current directory: /Users/joseysekine/Desktop/Current_Projects/Triptip/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\=
+compiling unf.cc
+linking shared-object unf_ext.bundle
+
+current directory: /Users/joseysekine/Desktop/Current_Projects/Triptip/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 unf_ext.bundle ./.gem.20221223-32422-4cv6nx
